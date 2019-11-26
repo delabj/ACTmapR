@@ -1,4 +1,4 @@
-man/
-packrat/
+man/*
+packrat/*
 LICENSE
 MappingSpecs.CSV

@@ -2,3 +2,5 @@ man/*
 packrat/*
 LICENSE
 MappingSpecs.CSV
+packrat/lib*/
+.Rproj.user

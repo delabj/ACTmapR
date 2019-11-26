@@ -1,2 +1,4 @@
 * linguist-vendored
-*.js linguist-vendored=false
+*.r linguist-vendored=false
+*.rds linguist-vendored=false
+*.Rproj linguist-vendored=false

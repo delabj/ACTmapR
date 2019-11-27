@@ -1,19 +1,19 @@
 #### this reads the fixed width file into R
-ReadACT<- function(filePath = "fileName", year="19-20"){
+ReadACT<- function(file = "fileName", year="19-20"){
   df <- GetMapping(year)
   if(!is.data.frame(df)){
     stop("Given Mapping isn't a dataframe. Have you entered the year correctly?")
   }
-  read.fwf(file=filePath,
+  read.fwf(file=file,
            widths = df$widthsACT,
            col.names = df$namesACT)
 }
 
 
-## Flexable Mapping. So far this is only 19-20
+## Flexable Mapping.
 GetMapping <- function(year="18-19"){
   switch(year,
-         "18-19"= return(actMap18_19), #placeholder
+         "18-19"= return(actMap18_19),  #sep2018-aug2019
          "19-20"= return(actMap19_20),  #sep2019-aug2020
          stop('No Map found, Have you entered the year correctly?') #error catching
   )

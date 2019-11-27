@@ -3,7 +3,7 @@ Type: Package
 Title: Read in the ACT Fixed Width File
 Version: 0.1.0
 Author: Joshua De la Bruere
-Maintainer: Joshua@delabj.com
+Maintainer: Joshua De la Bruere <Joshua@delabj.com>
 Description: This package contains a flexable mapping system for reading in the information 
                 From the FWF they ship to High Schools. 
 License: MIT

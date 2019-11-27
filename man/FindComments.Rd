@@ -4,7 +4,7 @@
 \title{
 ACT Comment Codes to Text Equivelents}
 \description{
-FindComments() adds a column with the text for a given comment code. This is tidyverse \link[magrittr]\%>\% compatable.
+FindComments() adds a column with the text for a given comment code. This is tidyverse pipe compatable.
 }
 \usage{
 FindComments(.data, ...)

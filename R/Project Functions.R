@@ -1,12 +1,20 @@
 #### this reads the fixed width file into R
-ReadACT<- function(file = "fileName", year="19-20"){
+ReadACT<- function(file = "fileName", year="19-20", blanks=F){
   df <- GetMapping(year)
   if(!is.data.frame(df)){
     stop("Given Mapping isn't a dataframe. Have you entered the year correctly?")
   }
-  read.fwf(file=file,
+  #reads in the file
+  temp <- read.fwf(file=file,
            widths = df$widthsACT,
            col.names = df$namesACT)
+ # checks to see if blank columns are needed
+  if(blanks){return(temp)}
+
+#if no removes the columns named blank#
+  temp %>%
+    select(-(starts_with("blank")))->temp
+  return(temp)
 }
 
 

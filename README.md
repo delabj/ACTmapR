@@ -47,23 +47,23 @@ right now the provided link to their table is missing and so I have created this
 |24|	Your essay showed recognition of the complexity of the issue by partially evaluating |its implications.|
 |25|	Your essay addressed the complexity of the issue by fully responding to counterarguments.|
 |26|	Your essay addressed the complexity of the issue by evaluating its implications.|
-|30|	Your essay provided very little writing about your ideas.  Try to write more about the topic.|
+|30|	Your essay provided very little writing about your ideas. Try to write more about the topic.|
 |31|	The ideas in your essay needed to be more fully explained and supported with more details.|
 |32|	Your essay used some specific details, reasons, and examples, but it needed more of them.|
 |33|	Your essay adequately supported general statements with specific reasons, examples, and details.
 |34|	General statements in your essay were well supported with specific reasons, examples, and details.|
 |35|	Your essay effectively supported general statements with specific reasons, examples, and details.|
-|40|	Your writing did not maintain a focus on the issue.  Try to plan your essay before you write.|
+|40|	Your writing did not maintain a focus on the issue. Try to plan your essay before you write.|
 |41|	Your essay focused on the general topic rather than on the specific issue in the prompt.|
 |42|	Your essay maintained focus on the specific issue in the prompt.|
-|50|	Your essay lacked organization.  Try to plan and arrange your ideas logically.|
-|51|	Your essay was not clearly organized.  Try to plan and arrange your ideas logically.|
+|50|	Your essay lacked organization. Try to plan and arrange your ideas logically.|
+|51|	Your essay was not clearly organized. Try to plan and arrange your ideas logically.|
 |52|	Your essay showed basic organizational structure, but the ideas needed to be more clearly connected.|
 |53|	The organization of your essay was adequate, but the rigid structure seemed to limit discussion.|
 |54|	Your essay was well organized, making it easy to understand logical relationships among ideas.|
 |55|	The logical sequence of ideas in your essay fit its persuasive purpose well.|
 |60|	Grammar, spelling, and punctuation errors made your essay difficult to understand.|
-|61|	Grammar, spelling, and punctuation errors were distracting.  Proofread your writing.|
+|61|	Grammar, spelling, and punctuation errors were distracting. Proofread your writing.|
 |62|	Using correct grammar and more varied sentence structures would improve your essay.|
 |63|	Using more varied sentence structures would make your essay clearer and more engaging.|
 |64|	Using more sentence variety and precise word choice would make your essay clearer and more engaging.|

@@ -37,6 +37,8 @@ A character that denotes which mapping is to be used. The default is "19-20", Cu
 The ACT provides schools with disks containing student results. These CDs contain a Fixed Width File (FWF) in a password protected WinZip folder. The FWF is an ASCII line sequental file with carriage return and line feed at the end of a reccord. A reccord is 1050 characters in length (Some Characters are blank). An individual disk can contain upto 700MB or 600,000 reccords.
 
 This acts as a wrapper for fwf that allows for easy reading without creation of the mapping by hand each time.
+
+Options to extract basic scores as well as the whole file are available.
 }
 \value{
 A \link[base]{data.frame} as produced by \link[utils]{read.fwf} as called within the function. Column widths and names are determined by the mapping, retrieved with \link[ACTmapR]{GetMapping}

@@ -13,7 +13,7 @@ ReadACT<- function(filePath = "fileName", year="19-20"){
 ## Flexable Mapping. So far this is only 19-20
 GetMapping <- function(year="18-19"){
   switch(year,
-         "18-19"= return("Old Mapping"), #placeholder
+         "18-19"= return(actMap18_19), #placeholder
          "19-20"= return(actMap19_20),  #sep2019-aug2020
          stop('No Map found, Have you entered the year correctly?') #error catching
   )

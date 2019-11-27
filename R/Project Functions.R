@@ -26,7 +26,6 @@ ReadACT<- function(file = "fileName", year="19-20", blanks=F, scores_Only=T){
              )->temp
   }
 
-
   return(temp)
 }
 

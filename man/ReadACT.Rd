@@ -8,7 +8,7 @@ Read ACT Text File AS Data Frame
 Read a fixed width student extract from the ACT disks
 }
 \usage{
-ReadACT(filePath = "fileName", year = "19-20")
+ReadACT(file = "fileName", year = "19-20",  blanks=FALSE, scores_Only=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +26,12 @@ A character that denotes which mapping is to be used. The default is "19-20", Cu
 
     "18-19" : Mapping for files from Augest 2018-September 2019
 }
+  \item{blanks}{
+  Setting this to TRUE will include the intentionally blank columns in the output from the FWF. By default this is set to FALSE
+  }
+  \item{score_only}{
+  Set to TRUE by default, this limits the output to only the student scale scores.
+  }
 }
 \details{
 The ACT provides schools with disks containing student results. These CDs contain a Fixed Width File (FWF) in a password protected WinZip folder. The FWF is an ASCII line sequental file with carriage return and line feed at the end of a reccord. A reccord is 1050 characters in length (Some Characters are blank). An individual disk can contain upto 700MB or 600,000 reccords.

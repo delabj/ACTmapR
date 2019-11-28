@@ -18,11 +18,19 @@ The function is called as such:
 
 
 ```R
-ReadACT(file="path", mapping="year")
+ReadACT(file = "fileName", year="19-20", blanks=F, scores_only=T)
 
 ```
 
-This returns a data.frame with columns that have been mapped. Right now the mapping provides 196 columns includeing the blanks. 
+This function reads in the ACT fixed width file and mapps the columns according to the specified year. This serves as a wrapper to read.fwf and provdies the mapping.
+
+file: The filepath of the file
+
+year: The Mapping school year, options currently supported 18-19 and 19-20
+
+blanks: Boolean Value, should blanks be included in the output data frame. This option does not stack with the scores_only option. 
+
+scores_only: Boolean Value, should the output only include the scale scores. 
 
 
 ### FindComments()

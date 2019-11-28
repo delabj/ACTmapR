@@ -1,5 +1,5 @@
 #### this reads the fixed width file into R
-ReadACT<- function(file = "fileName", year="19-20", blanks=F, scores_Only=T){
+ReadACT<- function(file = "fileName", year="19-20", blanks=F, scores_only=T){
   df <- GetMapping(year)
   if(!is.data.frame(df)){
     stop("Given Mapping isn't a dataframe. Have you entered the year correctly?")
@@ -14,7 +14,7 @@ ReadACT<- function(file = "fileName", year="19-20", blanks=F, scores_Only=T){
     select(-(starts_with("blank")))->temp
 
 #only grab studen names and scores
-  if(scores_Only){
+  if(scores_only){
     temp %>%
       select(lastName, firstName, dateOfBirth, stateID, testDate,
              "composite"= scaleComposite,

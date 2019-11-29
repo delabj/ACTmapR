@@ -5,3 +5,4 @@ LICENSE
 MappingSpecs.CSV
 packrat/lib*/
 .Rproj.user
+.Rhistory

@@ -10,7 +10,11 @@ shinyUI(fluidPage(
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(
-        sidebarPanel(
+        sidebarPanel(fileInput("fwf", "Upload the ACT Fixed Width File",
+                               multiple = TRUE,
+                               accept = c("text/csv",
+                                          "text/comma-separated-values,text/plain",
+                                          ".txt")),
             selectInput('mappingYear', label = 'Select Mapping Year',
                         choices=c('18-19','19-20'),
                         selected = NULL, multiple = FALSE,
@@ -18,6 +22,7 @@ shinyUI(fluidPage(
                         )
         ),
         mainPanel(
+            tableOutput("contents")
 
         )
     )

@@ -2,8 +2,7 @@
 \alias{GetMapping}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
-}
+Fetch Mapping For a Given Year}
 \description{
 This function gets the mapping from internal data. Used mostly internally, but made into a function for others to use if they need it.}
 \usage{

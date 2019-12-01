@@ -119,3 +119,12 @@ FindPTCRI <- function(.data, ...){
   .data$PTCRIText <- lapply(test2$PTCRI, GetPTCRI)
   return(.data)
 }
+
+runMapR <- function(){
+  appDir <- system.file("shinyapps","ShinyMapR", package = "ACTmapR")
+  if (appDir == "") {
+    stop("Could not find example directory. Try re-installing `ACTmapR`.", call. = FALSE)
+  }
+
+  shiny::runApp(appDir, display.mode = "normal")
+}

@@ -14,8 +14,14 @@ shinyUI(fluidPage(
                                multiple = TRUE,
                                accept = c("text/csv",
                                           "text/comma-separated-values,text/plain",
-                                          ".txt")),
-            selectInput('mappingYear', label = 'Select Mapping Year',
+                                          ".txt")
+                               ),
+                     radioButtons(
+                         "scoresOnly", label = "Domain Scores Only?",
+                         choices = c("Yes" = TRUE, "No" = FALSE)
+                     ),
+                     uiOutput("blanksCheckBox"),
+                     selectInput('mappingYear', label = 'Select Mapping Year',
                         choices=c('18-19','19-20'),
                         selected = NULL, multiple = FALSE,
                         selectize = TRUE, width = NULL, size = NULL

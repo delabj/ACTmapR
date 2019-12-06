@@ -116,7 +116,7 @@ GetPTCRI <- function(textPTCRI="-"){
 
 #Tranforms the column of  PTCRI into text
 FindPTCRI <- function(.data, ...){
-  .data$PTCRIText <- lapply(test2$PTCRI, GetPTCRI)
+  .data$PTCRIText <- lapply(.data$PTCRI, GetPTCRI)
   return(.data)
 }
 
@@ -127,4 +127,23 @@ runMapR <- function(){
   }
 
   shiny::runApp(appDir, display.mode = "normal")
+}
+
+
+GetReligAffil <- function(textReligAffil="NA"){
+df <- readRDS(file="~/ACTmapR/data/religAffiliation.rds")
+
+if(textReligAffil %in% df$Code){
+  return(df$Response[df$Code==textReligAffil])
+}
+else{
+  return(NA)
+}
+
+}
+
+
+FindUTCI <- function(.data, ...){
+  .data$religiousAffiliation <- lapply(.data$religiousAffiliation, GetReligAffil)
+  return(.data)
 }

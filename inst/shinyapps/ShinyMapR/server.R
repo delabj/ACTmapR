@@ -1,5 +1,6 @@
 library(shiny)
 library(dplyr)
+library(ACTmapR)
 
 shinyServer(function(input, output) {
 
@@ -59,4 +60,17 @@ shinyServer(function(input, output) {
         df <- filedata()
         return(df)
     })
+
+
+    #### EXPORT DATA ####
+    output$downloadData <- downloadHandler(
+        filename = function() {
+            paste("ACT Grades", ".csv", sep = "")
+        },
+        content = function(file) {
+            write.csv(filedata(), file, row.names = FALSE, na="")
+        }
+    )
 })
+
+

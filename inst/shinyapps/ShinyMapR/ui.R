@@ -25,7 +25,8 @@ shinyUI(fluidPage(
                         choices=c('18-19','19-20'),
                         selected = NULL, multiple = FALSE,
                         selectize = TRUE, width = NULL, size = NULL
-                        )
+                        ),
+                     downloadButton("downloadData", "Download")
         ),
         mainPanel(
             tableOutput("contents")

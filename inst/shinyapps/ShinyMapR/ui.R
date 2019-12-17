@@ -1,4 +1,5 @@
 # This is a simple UI for people to use the ACT mapping
+library(ACTmapR)
 
 library(shiny)
 

@@ -34,14 +34,39 @@ scores_only: Boolean Value, should the output only include the scale scores.
 
 
 ### FindComments()
-This function converts the comment codes into the comments
+FindComments() adds a column with the text for a given comment code. This is tidyverse pipe compatable.
+
+<details><summary> Show Details </summary> 
+<p> 
+
+#### Usage
+'''r 
+FindComments(.data, ...)
+'''
+
+#### Arguments
+ .data:  A tbl. This needs to have a vector named $essayComments as produced by ReadACT()
+ 
+#### Value
+
+returns an object of the same class as .data
+
+#### Examples
+
+'''r
+temp <-data.frame( essayComments=c("60654211","606542--","5065----", "60------", "--------")
+temp <- FindComments(temp)
+'''
+
+</p>
+</details>
 
 #### Comment Codes and Their Equivalents 
 
 The ACT provides a list of 4 potential comments for each writing section. Those comments are provided by way of a 2 digit comment code which needs to be matched to a table of comments
 right now the provided link to their table is missing and so I have created this table for manual look up of ACT comment Codes and their equivalent text. 
 
-<details><summary> Show table</summary> 
+<details><summary> Show Table</summary> 
 <p> 
 
 |Comment Code |	Comment Text|
@@ -83,5 +108,47 @@ right now the provided link to their table is missing and so I have created this
 
 Source: http://wcpssact.pbworks.com/w/page/47519725/ACT%20Plus%20Writing%20Essay%20Comments
 
+### GetMapping
+
+This function gets the mapping for reading the ACT file. This is mostly used internally, but made into a function for ease of use. 
+
+<details><summary> Show Details </summary> 
+<p> 
+
+#### Usage
+'''r 
+GetMapping(Year = "18-19")
+'''
+
+#### Arguments
+ year: Takes a string of school year in the formatt of "YY-YY" Currently supported are "18-19" and "19-20"
+ 
+#### Value
+
+returns a data.frame
+
+</p>
+</details>
 
 
+### Get UTCI 
+
+A function to convert the provided Understanding Complex Text Indicator (UTCI) code to proficency level. 
+<details><summary> Show Details </summary> 
+<p> 
+
+#### Usage
+'''r 
+GetUTCI(textUTCI = "-")
+'''
+
+#### Arguments
+textUTCI	takes in a string, and converts it into the UTCI proficency level.
+
+ 
+#### Value
+
+returns a string
+
+</p>
+</details>

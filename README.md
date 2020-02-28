@@ -120,7 +120,7 @@ This function gets the mapping for reading the ACT file. This is mostly used int
 <p> 
 
 #### Usage
-````r 
+```r 
 get_mapping(year = "18-19")
 ```
 

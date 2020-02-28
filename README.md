@@ -1,28 +1,27 @@
-# actMapping In R
+# ACT Mapping In R
 
-
-Starting to sketch out a package (in R) of functions that would be useful to those trying to unpack the ACT's fixed width file format for the student records sent to schools. 
+A simple package to aid in reading the ACT fixed width file. 
 
 The ACT provides schools with disks containing student results. These CDs contain a Fixed Width File (FWF) in a password protected WinZip folder. The FWF is an ASCII line sequental file with carriage return and line feed at the end of a reccord. A reccord is 1050 characters in length (Some Characters are blank). An individual disk can contain upto 700MB or 600,000 reccords.
 
-
-
-
 ## Functions
 
-### ReadACT()
+### read_ACT()
 This function allows users to read in a fixed width file and provides the mapping based on year. This acts as a wrapper for read.fwf that allows for easy reading without creation of the mapping by hand each time.
 
+
+<details><summary>Show Details </summary> 
+<p>
 
 The function is called as such:
 
 
 ```R
-ReadACT(file = "fileName", year="19-20", blanks=F, scores_only=T)
+read_ACT(file = "fileName", year="19-20", blanks=F, scores_only=T)
 
 ```
 
-This function reads in the ACT fixed width file and mapps the columns according to the specified year. This serves as a wrapper to read.fwf and provdies the mapping.
+This function reads in the ACT fixed width file and mapps the columns according to the specified school year. This serves as a wrapper to read.fwf and provdies the mapping.
 
 file: The filepath of the file
 
@@ -30,22 +29,25 @@ year: The Mapping school year, options currently supported 18-19 and 19-20
 
 blanks: Boolean Value, should blanks be included in the output data frame. This option does not stack with the scores_only option. 
 
-scores_only: Boolean Value, should the output only include the scale scores. 
+scores_only: Boolean Value, should the output only include the scale scores. This is TRUE by default 
+
+</p>
+</details>
 
 
-### FindComments()
+### find_comments()
 FindComments() adds a column with the text for a given comment code. This is tidyverse pipe compatable.
 
 <details><summary> Show Details </summary> 
 <p> 
 
 #### Usage
-'''r 
+```r 
 FindComments(.data, ...)
-'''
+```
 
 #### Arguments
- .data:  A tbl. This needs to have a vector named $essayComments as produced by ReadACT()
+ .data:  A tbl. This needs to have a vector named essayComments as produced by ReadACT()
  
 #### Value
 
@@ -53,20 +55,18 @@ returns an object of the same class as .data
 
 #### Examples
 
-'''r
+```r
 temp <-data.frame( essayComments=c("60654211","606542--","5065----", "60------", "--------")
 temp <- FindComments(temp)
-'''
+```
 
-</p>
-</details>
 
 #### Comment Codes and Their Equivalents 
 
 The ACT provides a list of 4 potential comments for each writing section. Those comments are provided by way of a 2 digit comment code which needs to be matched to a table of comments
 right now the provided link to their table is missing and so I have created this table for manual look up of ACT comment Codes and their equivalent text. 
 
-<details><summary> Show Table</summary> 
+<details> <summary> Show Table </summary> 
 <p> 
 
 |Comment Code |	Comment Text|
@@ -108,7 +108,11 @@ right now the provided link to their table is missing and so I have created this
 
 Source: http://wcpssact.pbworks.com/w/page/47519725/ACT%20Plus%20Writing%20Essay%20Comments
 
-### GetMapping
+
+</p>
+</details>
+
+### get_mapping()
 
 This function gets the mapping for reading the ACT file. This is mostly used internally, but made into a function for ease of use. 
 
@@ -116,9 +120,9 @@ This function gets the mapping for reading the ACT file. This is mostly used int
 <p> 
 
 #### Usage
-'''r 
-GetMapping(Year = "18-19")
-'''
+````r 
+get_mapping(year = "18-19")
+```
 
 #### Arguments
  year: Takes a string of school year in the formatt of "YY-YY" Currently supported are "18-19" and "19-20"
@@ -130,17 +134,38 @@ returns a data.frame
 </p>
 </details>
 
+### get_PTCRI()
 
-### Get UTCI 
+A function to convert the provided Progress toward Career Readiness Indicator (PTCRI) code to proficency level. 
+<details><summary> Show Details </summary> 
+<p> 
+
+#### Usage
+```r 
+get_PTCRI(textUTCI = "-")
+```
+
+#### Arguments
+textPTCRI takes in a string, and converts it into the UTCI proficency level.
+
+ 
+#### Value
+
+returns a string with the indicated level. 
+
+</p>
+</details>
+
+### get_UTCI() 
 
 A function to convert the provided Understanding Complex Text Indicator (UTCI) code to proficency level. 
 <details><summary> Show Details </summary> 
 <p> 
 
 #### Usage
-'''r 
-GetUTCI(textUTCI = "-")
-'''
+```r 
+get_UTCI(textUTCI = "-")
+```
 
 #### Arguments
 textUTCI	takes in a string, and converts it into the UTCI proficency level.
@@ -152,3 +177,4 @@ returns a string
 
 </p>
 </details>
+

@@ -1,12 +1,16 @@
 Package: ACTmapR
 Type: Package
-Title: Read in the ACT Fixed Width File
-Version: 0.1.0
+Title: Read the FWF provided by the ACT for test scores
+Version: 0.2.0
 Author: Joshua De la Bruere
 Maintainer: Joshua De la Bruere <Joshua@delabj.com>
-Description: This package contains a flexable mapping system for reading in the information 
-                From the FWF they ship to High Schools. 
+Description: Read in the file from the ACT fixed width file easily. 
+    Provides a mapping from the ACT file layout document and functions to translate comments and other coded columns.
 License: MIT
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr, tidyverse, shiny
+RoxygenNote: 7.0.2
+Imports: 
+  magrittr (>= 1.5),
+  dplyr (>= 0.8.3)
+

@@ -189,7 +189,7 @@ get_get_relig_affil(textUTCI = "1")
 ```
 
 #### Arguments
-text_UTCI_relig_affil takes in a string, and converts it into the religous affiliation.
+text_relig_affil takes in a string, and converts it into the religous affiliation.
 
  
 #### Value

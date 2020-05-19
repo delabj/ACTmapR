@@ -13,13 +13,16 @@ find_relig_affil(.data, ...)
 }
 \value{
 A data frame with a new column PTCRIText
-df <- readACT(filepath, scores_only = F)
-find_relig_affil(df)
-
-df <- readACT(filepath, scores_only = F)
-df <- find_comments(df)
-df_with_relig_affil <- find_relig_affil(df)
 }
 \description{
 Transform a column of Religious Affiliation codes into text
+}
+\examples{
+ff <- tempfile()
+df <- read_ACT(ff, scores_only = F)
+find_relig_affil(df)
+
+df <- read_ACT(ff, scores_only = F)
+df <- find_comments(df)
+df_with_relig_affil <- find_relig_affil(df)
 }

@@ -1,7 +1,7 @@
 Package: ACTmapR
 Type: Package
 Title: Read the FWF provided by the ACT for test scores
-Version: 0.2.0
+Version: 0.2.1
 Author: Joshua De la Bruere
 Maintainer: Joshua De la Bruere <Joshua@delabj.com>
 Description: Read in the file from the ACT fixed width file easily. 
@@ -12,5 +12,6 @@ LazyData: true
 RoxygenNote: 7.0.2
 Imports: 
   magrittr (>= 1.5),
-  dplyr (>= 0.8.3)
+  dplyr (>= 0.8.3), 
+  utils (>= 3.6.1)
 

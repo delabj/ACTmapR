@@ -18,10 +18,11 @@ A data frame with a new column UCTIText
 Transform the UCTI code to level
 }
 \examples{
-df <- readACT(filepath, scores_only = F)
+ff <- tempfile()
+df <- read_ACT(ff, scores_only = F)
 find_UCTI(df)
 
-df <- readACT(filepath, scores_only = F)
+df <- read_ACT(ff, scores_only = F)
 df <- find_comments(df)
 df_with_UCTI <- find_UCTI(df)
 }

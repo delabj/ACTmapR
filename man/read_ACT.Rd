@@ -4,7 +4,7 @@
 \alias{read_ACT}
 \title{Read in the ACT fixed width file}
 \usage{
-read_ACT(file = "fileName", year = "19-20", blanks = F, scores_only = T)
+read_ACT(file = "fileName", year = "19-20", blanks = FALSE, scores_only = TRUE)
 }
 \arguments{
 \item{file}{The file path to the file}
@@ -22,6 +22,6 @@ A data frame containing the data from the fixed width file provided by the ACT
 Read in the ACT fixed width file
 }
 \examples{
-
-#read_ACT(filepath, mapping = "19-20")
+ff <- tempfile()
+#read_ACT(ff, mapping = "19-20")
 }

@@ -13,13 +13,16 @@ find_PTCRI(.data, ...)
 }
 \value{
 A data frame with a new column PTCRIText
-df <- readACT(filepath, scores_only = F)
-find_PTCRI(df)
-
-df <- readACT(filepath, scores_only = F)
-df <- find_comments(df)
-df_with_PTCRI <- find_PTCRI(df)
 }
 \description{
 Transform a column of PTCRI codes into text
+}
+\examples{
+ff <- tempfile()
+df <- read_ACT(ff, scores_only = F)
+find_PTCRI(df)
+
+df <- read_ACT(ff, scores_only = F)
+df <- find_comments(df)
+df_with_PTCRI <- find_PTCRI(df)
 }

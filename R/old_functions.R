@@ -2,7 +2,7 @@
 
 
 #### this reads the fixed width file into R
-ReadACT<- function(file = "fileName", year="19-20", blanks=F, scores_only=T){
+ReadACT<- function(file = "fileName", year="19-20", blanks=FALSE, scores_only=TRUE){
   .Deprecated("read_ACT()",
               package = "ACTmapR",
               msg="To follow better styling principles, this function has been depreciated in favor of read_act()",
@@ -13,7 +13,7 @@ ReadACT<- function(file = "fileName", year="19-20", blanks=F, scores_only=T){
   }
 
   #reads in the file
-  temp <- read.fwf(file=file, widths = df$widthsACT, col.names = df$namesACT, comment.char="")
+  temp <- utils::read.fwf(file=file, widths = df$widthsACT, col.names = df$namesACT, comment.char="")
    # checks to see if blank columns are needed
   if(blanks){return(temp)}
   #if not  removes the columns named blank

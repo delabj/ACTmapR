@@ -94,8 +94,10 @@ translate_comment <- function(comment="--------"){
 #' @return A data frame with a new column named commentText which has the text of the comments
 #'
 #' @examples
-#' df <- readACT(filepath, scores_only = F)
-#' df_with comments <- find_comments(df)
+#' ff <- tempfile()
+#' df <- read_ACT(ff, scores_only = F)
+#' df_with_comments <- find_comments(df)
+#' @export
 find_comments <- function(.data, ...){
   .data$commentText <- lapply(.data$essayComments, translate_comment)
   return(.data)
@@ -123,12 +125,14 @@ get_UCTI <- function(textUCTI="-"){
 #' @param ... One or more unquoted expressions seperated by commas
 #' @return A data frame with a new column UCTIText
 #' @examples
-#' df <- readACT(filepath, scores_only = F)
+#' ff <- tempfile()
+#' df <- read_ACT(ff, scores_only = F)
 #' find_UCTI(df)
 #'
-#' df <- readACT(filepath, scores_only = F)
+#' df <- read_ACT(ff, scores_only = F)
 #' df <- find_comments(df)
 #' df_with_UCTI <- find_UCTI(df)
+#' @export
 find_UCTI <- function(.data, ...){
   .data$UCTIText <- lapply(test2$UCTI, get_UCTI)
   return(.data)
@@ -161,12 +165,16 @@ get_PTCRI <- function(textPTCRI="-"){
 #' @param .data A data frame created by read_ACT() with scores_only = F or another package function
 #' @param ... One or more unquoted expressions seperated by commas
 #' @return A data frame with a new column PTCRIText
-#' df <- readACT(filepath, scores_only = F)
+#' @examples
+#' ff <- tempfile()
+
+#' df <- read_ACT(ff, scores_only = F)
 #' find_PTCRI(df)
 #'
-#' df <- readACT(filepath, scores_only = F)
+#' df <- read_ACT(ff, scores_only = F)
 #' df <- find_comments(df)
 #' df_with_PTCRI <- find_PTCRI(df)
+#' @export
 find_PTCRI <- function(.data, ...){
   .data$PTCRIText <- lapply(.data$PTCRI, GetPTCRI)
   return(.data)
@@ -197,12 +205,15 @@ get_relig_affil <- function(textReligAffil="NA"){
 #' @param .data A data frame created by read_ACT() with scores_only = F or another package function
 #' @param ... One or more unquoted expressions seperated by commas
 #' @return A data frame with a new column PTCRIText
-#' df <- readACT(filepath, scores_only = F)
+#' @examples
+#' ff <- tempfile()
+#' df <- read_ACT(ff, scores_only = F)
 #' find_relig_affil(df)
 #'
-#' df <- readACT(filepath, scores_only = F)
+#' df <- read_ACT(ff, scores_only = F)
 #' df <- find_comments(df)
 #' df_with_relig_affil <- find_relig_affil(df)
+#' @export
 find_relig_affil <- function(.data, ...){
   .data$religiousAffiliation <- lapply(.data$religiousAffiliation, get_relig_affil)
   return(.data)

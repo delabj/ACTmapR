@@ -18,6 +18,7 @@ A data frame with a new column named commentText which has the text of the comme
 Find a columns comments
 }
 \examples{
-df <- readACT(filepath, scores_only = F)
-df_with comments <- find_comments(df)
+ff <- tempfile()
+df <- read_ACT(ff, scores_only = F)
+df_with_comments <- find_comments(df)
 }

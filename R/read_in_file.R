@@ -6,28 +6,38 @@
 #' @param scores_only Boolean option to only select scores.
 #' @return A data frame containing the data from the fixed width file provided by the ACT
 #' @examples
-#'
-#' #read_ACT(filepath, mapping = "19-20")
-read_ACT <- function(file = "fileName", year = "19-20", blanks = F, scores_only = T) {
+#' ff <- tempfile()
+#' #read_ACT(ff, mapping = "19-20")
+#' @export
+read_ACT <- function(file = "fileName", year = "19-20", blanks = FALSE, scores_only = TRUE) {
   df <- get_mapping(year)
   if (!is.data.frame(df)) {
     stop("Given Mapping isn't a dataframe. Have you entered the year correctly?")
   }
 
   # reads in the file
-  temp <- read.fwf(file = file, widths = df$widthsACT, col.names = df$namesACT, comment.char = "")
+  temp <- utils::read.fwf(file = file, widths = df$widthsACT, col.names = df$namesACT, comment.char = "")
   # checks to see if blank columns are needed
   if (blanks) {
     return(temp)
   }
   # if not  removes the columns named blank
   temp %>%
-    dplyr::select(-(dplyr::starts_with("blank"))) -> temp
+    dplyr::select(
+      -(
+        dplyr::starts_with("blank")
+        )
+      ) -> temp
 
   # only grab student names and scores
   if (scores_only) {
     temp %>%
-      dplyr::select(lastName, firstName, dateOfBirth, stateID, testDate,
+      dplyr::select(
+        lastName,
+        firstName,
+        dateOfBirth,
+        stateID,
+        testDate,
         "composite" = scaleComposite,
         "english" = scaleEnglish,
         "mathmatics" = scaleMath,

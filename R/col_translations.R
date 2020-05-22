@@ -103,6 +103,7 @@ find_comments <- function(.data, ...){
   return(.data)
 }
 
+
 #' Convert Understanding Complex Text Indicator (UTCI) code to proficency level
 #'
 #' @param textUCTI the text of a UTCI code
